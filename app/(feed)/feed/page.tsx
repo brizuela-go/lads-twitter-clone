@@ -23,8 +23,8 @@ const FeedHome = async (props: Props) => {
   });
 
   function getTimeDifference(tweetCreatedAt: any) {
-    const now = new Date();
-    const tweetDate = new Date(tweetCreatedAt);
+    const now = new Date().valueOf();
+    const tweetDate = new Date(tweetCreatedAt).valueOf();
 
     const timeDifferenceInSeconds = Math.floor((now - tweetDate) / 1000);
     const timeDifferenceInMinutes = Math.floor(timeDifferenceInSeconds / 60);
