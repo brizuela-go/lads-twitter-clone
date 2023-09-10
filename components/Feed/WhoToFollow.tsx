@@ -17,8 +17,6 @@ const WhoToFollow = async (props: Props) => {
     take: 3,
   });
 
-  console.log(users);
-
   return (
     <div className="ml-[51em] w-72 fixed ">
       <Card className="m-6">

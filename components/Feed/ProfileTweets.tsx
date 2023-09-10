@@ -20,8 +20,6 @@ const ProfileTweets = (props: Props) => {
     getTweets();
   }, []);
 
-  console.log(tweets);
-
   function getTimeDifference(tweetCreatedAt: any) {
     const now = new Date().valueOf();
     const tweetDate = new Date(tweetCreatedAt).valueOf();
