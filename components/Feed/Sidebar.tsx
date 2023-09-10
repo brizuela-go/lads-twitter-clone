@@ -86,9 +86,9 @@ const Sidebar = (props: Props) => {
         </DialogTrigger>
         <DialogContent className="sm:max-w-[425px]">
           <DialogHeader>
-            <DialogTitle>What's popping?</DialogTitle>
+            <DialogTitle>What&apos;s popping?</DialogTitle>
             <DialogDescription>
-              Say your piece and let the world know what's on your mind.
+              Say your piece and let the world know what&apos;s on your mind.
             </DialogDescription>
           </DialogHeader>
 

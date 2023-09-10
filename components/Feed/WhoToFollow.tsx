@@ -26,8 +26,11 @@ const WhoToFollow = async (props: Props) => {
           <CardTitle className="text-center">Who to follow</CardTitle>
         </CardHeader>
         <CardContent>
-          {users.map((user: any) => (
-            <div className="flex flex-row items-center justify-between ">
+          {users.map((user: any, i) => (
+            <div
+              key={i}
+              className="flex flex-row items-center justify-between "
+            >
               <div className="flex flex-row items-center space-y-6">
                 <Image
                   width={40}
