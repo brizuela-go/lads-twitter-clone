@@ -42,7 +42,7 @@ const Profile = async (props: Props) => {
 
   return (
     <div>
-      {tweets.map((tweet) => (
+      {tweets.map((tweet: any) => (
         <div key={tweet.id} className="flex flex-col border-b-2 p-4">
           <div className="flex flex-row">
             <Image

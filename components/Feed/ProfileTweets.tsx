@@ -44,7 +44,7 @@ const ProfileTweets = (props: Props) => {
 
   return (
     <div className="overflow-y-scroll h">
-      {tweets.map((tweet) => (
+      {tweets.map((tweet: any) => (
         <div key={tweet.id} className="flex flex-col border-b-2 p-4 ">
           <div className="flex flex-row">
             <div className="static">
