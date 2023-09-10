@@ -6,12 +6,9 @@ import Link from "next/link";
 
 export default function Home() {
   return (
-    <main className="">
-      <Link href="/sign-in">
-        <Button>Login</Button>
-      </Link>
-      <Link href="/sign-up">
-        <Button>Register</Button>
+    <main className="flex min-h-screen justify-center items-center">
+      <Link href="/feed">
+        <Button>Go to feed</Button>
       </Link>
     </main>
   );

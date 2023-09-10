@@ -16,15 +16,17 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="px-56">
-        <Sidebar />
+      <body>
+        <div className="px-52">
+          <Sidebar />
 
-        <Header />
-        <div className="ml-[16em] fixed  h-screen w-[35em] mt-20 border-t-2">
-          {children}
+          <Header />
+          <div className="ml-[16em] fixed  h-screen w-[35em] mt-20 border-t-2">
+            {children}
+          </div>
+
+          <WhoToFollow />
         </div>
-
-        <WhoToFollow />
       </body>
     </html>
   );

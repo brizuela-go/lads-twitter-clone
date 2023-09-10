@@ -80,6 +80,9 @@ const Sidebar = (props: Props) => {
           </button>
         </li>
       </ul>
+      <div className="mt-6">
+        <ModeToggle />
+      </div>
       <Dialog>
         <DialogTrigger asChild>
           <Button className="mt-10 w-full">Tweet</Button>
