@@ -1,6 +1,7 @@
 import React from "react";
 import { prisma } from "@/lib/prismaClient";
 import Image from "next/image";
+import LikeButton from "@/components/Feed/LikeButton";
 
 type Props = {};
 
@@ -12,7 +13,11 @@ export const runtime = "nodejs";
 export const preferredRegion = "auto";
 export const maxDuration = 5;
 
+import { auth } from "@clerk/nextjs";
+
 const FeedHome = async (props: Props) => {
+  const { userId } = auth();
+
   const tweets = await prisma.tweet.findMany({
     include: {
       user: true,
@@ -21,6 +26,14 @@ const FeedHome = async (props: Props) => {
       createdAt: "desc",
     },
   });
+
+  const likes = await prisma.likes.findMany({
+    where: {
+      userId: userId!,
+    },
+  });
+
+  const likedTweets = likes.map((like) => like.tweetId);
 
   function getTimeDifference(tweetCreatedAt: any) {
     const now = new Date().valueOf();
@@ -68,6 +81,14 @@ const FeedHome = async (props: Props) => {
               </div>
               <p>{tweet.content}</p>
             </div>
+          </div>
+          <div className="flex flex-wrap items-center">
+            <LikeButton
+              tweetId={tweet.id}
+              likedTweets={likedTweets}
+              externalId={userId!}
+            />
+            {tweet.likeCount}
           </div>
         </div>
       ))}

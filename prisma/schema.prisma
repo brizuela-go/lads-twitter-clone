@@ -16,6 +16,7 @@ model User {
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
   tweets     Tweet[]
+  Likes      Likes[]
 }
 
 model Tweet {
@@ -25,4 +26,16 @@ model Tweet {
   updatedAt DateTime @updatedAt
   userId    String
   user      User     @relation(fields: [userId], references: [externalId])
+  Likes     Likes[]
+  likeCount Int      @default(0) // New field to store the like count
+}
+
+model Likes {
+  id        Int      @id @default(autoincrement())
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  userId    String
+  tweetId   Int
+  user      User     @relation(fields: [userId], references: [externalId])
+  tweet     Tweet    @relation(fields: [tweetId], references: [id])
 }
