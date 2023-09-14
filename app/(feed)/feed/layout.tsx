@@ -17,11 +17,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="px-52">
+        <div className="xl:px-52">
           <Sidebar />
 
           <Header />
-          <div className="ml-[16em] fixed  h-screen w-[35em] mt-20 border-t-2">
+          <div className="xl:ml-[16em] xl:fixed  h-screen xl:w-[35em] xl:mt-20 mt-6 border-t-2">
             {children}
           </div>
 
