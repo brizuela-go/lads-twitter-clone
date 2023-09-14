@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <div className="xl:px-52">
+        <div className="xl:px-40">
           <Sidebar />
 
           <Header />
